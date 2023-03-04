@@ -1,4 +1,4 @@
-(ns clj-owasp.injection)
+(ns clj-owasp.top1-injection)
 
 ;Aqui temos uma função que roda um cluster de kafka
 ;Entao, vc passa pra funcao qual eh o arquivo de confg

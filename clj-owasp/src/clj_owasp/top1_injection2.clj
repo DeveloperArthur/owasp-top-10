@@ -1,4 +1,4 @@
-(ns clj-owasp.injection2)
+(ns clj-owasp.top1-injection2)
 
 (defn login [username password]
   (let [sql (str "select * from Users where username = '" username "' and password = '" password "'")]

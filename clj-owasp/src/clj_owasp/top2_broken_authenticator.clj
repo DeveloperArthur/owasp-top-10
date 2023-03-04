@@ -1,4 +1,4 @@
-(ns clj_owasp.broken_authenticator
+(ns clj_owasp.top2-broken_authenticator
   (:require [crypto.password.bcrypt :as password]))
 
 (def database (atom {}))
