@@ -1,7 +1,3 @@
-(ns clj-owasp.core
-  (:gen-class))
+(ns clj-owasp.core)
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+;pra executar os arquivos, deve rodar o app com REPL, abrir o arquivo e executar command + shift + L
