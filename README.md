@@ -117,10 +117,12 @@ esse tipo de ataque mostra algumas vulnerabilidades, por exemplo:
 
   - desabilitar cache para requests que possuem dados sensiveis
 
-  - nao armazenar dados desnecessario 
+  - nao armazenar dados desnecessarios
     se vc só precisa da informacao em um momento, nao armazena
-    as vezes o provedor de pagamentos da um token pro cartao de credito, ai guarda o token no banco
-    o numero do cartao vc nao vai usar de novo
+
+    as vezes o provedor de pagamentos da um token pro cartao de credito
+    
+    ai guarda o token no banco, pois o numero do cartao vc nao vai usar de novo
 
 ## A4 - XML External Entities (XEE)
 a entidade externa permite que um parser de xml carregue informacoes de um lugar de fora, inclusive do sistema operacional do servidor, entao imagine que sua aplicação recebe um XML similar a isso:
