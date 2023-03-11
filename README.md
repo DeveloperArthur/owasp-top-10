@@ -23,17 +23,17 @@ e conseguirá entrar no site pois a query retorna um usuário admin, isso é um 
 
 chutando que o banco de dados, na tabela user tenha um campo booleano chamado admin
 
-outro comando poderia ser q poderia ser inputado é: 
+outro comando que poderia ser inputado é: 
 
     '; drop table Usuarios;#
 
-mas esse problema nao é só em SQL, NoSQL também, no terminal, qualquer serviço que o cliente passou informação e será executado em algum lugar
+mas esse problema nao é só em SQL, no NoSQL tambem, no terminal bash e qualquer serviço que o cliente passa informação e será executado em algum lugar
 
 em NoSQL tem exemplo de injection nesse link: https://mongoplayground.net/p/Nq_-Ghhq9rW
 
 ## Como se prevenir: 
 
-Não criar sua própria sanitização e nunca concatenar strings na unha! Existem ferramentas já prontas que fazem a sanitização do comando SQL antes de rodar, em Java por exemplo:
+Sanitizar os dados, mas não criar sua própria sanitização e nunca concatenar strings na unha! Existem ferramentas já prontas que fazem a sanitização do comando SQL antes de rodar, em Java por exemplo:
 
     String comando = "select * from clientes where id = ?";
     PreparedStatement p = conn.prepareStatement(comando);
@@ -47,8 +47,10 @@ outra forma de se prevenir é migrar para um ORM, o Hibernet tem vulnerabilidade
 esse tipo de ataque mostra algumas vulnerabilidades, por exemplo:
 
   - se sua aplicação aceita senhas muito fáceis
-      significa q alguem pode descobrir e invadir a aplicação
-      no momento q vc aceita senhas comuns, usuarios vao usar senhas comuns e vc tem 1 vulnerabilidade, e sim, teoricamente nao eh culpa da aplicação, mas se quer tapar o maximo de buracos possiveis, entao nao deixe q ele crie senha facil
+  
+    significa q alguem pode descobrir e invadir a aplicação
+     
+    no momento q vc aceita senhas comuns, usuarios vao usar senhas comuns e vc tem 1 vulnerabilidade, e sim, teoricamente nao eh culpa da aplicação, mas se quer tapar o maximo de buracos possiveis, entao nao deixe q ele crie senha facil
 
   - se sua aplicação permite ataque brute force
 
