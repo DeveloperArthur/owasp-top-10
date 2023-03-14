@@ -149,27 +149,29 @@ ou seja, todas as senhas do servidor estarao gravas no campo ``<foo>``
   - se nao for possivel fazer esses passos acima, use um api security gateway ou WAFs
 
 ## A5 - Broken Access Control
-essa vulnerabilidade é basicamente controle de permissoes 
-  - áreas logadas
-    não deixar qualquer um acessar pela URL paginas que só deveriam ser acessadas pelo usuario logado, validar permissao de acesso com perfil
+essa vulnerabilidade é basicamente controle de permissões 
+  - áreas logadas:
 
-  - má configurações de CORS
-    permitindo que pessoas indevidas acessem a API q nao deveria
+    não deixar qualquer um acessar páginas (através de URL) que só deveriam ser acessadas pelo usuário logado, validar permissão de acesso com perfil
+
+  - má configurações de CORS:
+
+    permitindo que pessoas indevidas acessem a API que não deveria
     
 ## Como se prevenir: 
-  - controle de area logada
+  - controle de área logada
 
-  - com excecao de recursos publicos, tudo fechado por padrao
+  - com excecao de recursos publicos, fechar todos os acessos por padrão
 
-  - liberar CORS só para o necessario
+  - liberar CORS só para o necessário
 
-  - token JWT deve ser invalidado depois que usuario fez logout
+  - token JWT deve ser invalidado depois que usuário fez LOGOUT
 
   - desabilitar web server directory listing
 
   - time de QA e devs incluirem testes de controle de acesso de unidade e integração
 
-    OBS: SAST e DAST podem perceber a ausencia desse controle, mas nao validam se esta funcionando
+    OBS: SAST e DAST podem perceber a ausência desse controle, mas não validam se esta funcionando
 
 ## A6 - Security misconfiguration
 as vulnerabilidades sao:
