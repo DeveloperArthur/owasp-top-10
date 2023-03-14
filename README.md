@@ -174,23 +174,23 @@ essa vulnerabilidade é basicamente controle de permissões
     OBS: SAST e DAST podem perceber a ausência desse controle, mas não validam se esta funcionando
 
 ## A6 - Security misconfiguration
-as vulnerabilidades sao:
-  - recursos desnecessarios instalados (portas, programas, servicos, paginas, privilegios)
+as vulnerabilidades são:
+  - recursos desnecessários instalados (portas, programas, serviços, páginas, privilégios)
 
-  - usuario com senha padrao admin/admin (veja A2)
+  - usuário com senha padrão admin/admin (veja A2)
 
-  - mostrar stack trace em erros para usuario, mostrando nomes de classes, parametros, metodos
+  - mostrar stack trace de erros para usuário, mostrando nomes de classes, parametros, metodos
 
-  - directory listing nao esta desabilitado no servidor
+  - directory listing não estar desabilitado no servidor (veja A5)
 
-  - software esta desatualizado ou vulneravel (veja A9)
+  - software estar desatualizado ou vulnerável (veja A9)
 
 ## Como se prevenir: 
-  - ter um ambiente igual producao para testar falhas de segurança
+  - ter um ambiente igual produção para testar falhas de segurança
 
   - apenas recursos necessarios instalados no servidor
 
-  - verificar as permissoes dos serviços de storage de cloud (S3, cloud storage, blob storage)
+  - verificar as permissões dos serviços de storage de cloud (S3, cloud storage, blob storage)
 
 ## A7 - Cross-Site Scripting (XSS)
 qualquer site, serviço ou sistema q interpreta/executa/invoca/carrega/ codigo dinamico, esta suscetível a esse tipo de ataque
