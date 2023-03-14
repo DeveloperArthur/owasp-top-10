@@ -39,7 +39,7 @@
       slurp
       clojure.string/split-lines))
 
-(def commom-passwords (read-file "src/commom-passwords.txt"))
+(def commom-passwords (read-file "resources/commom-passwords.txt"))
 (println commom-passwords)
 
 (defn is-commom? [password]
