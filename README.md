@@ -125,21 +125,21 @@ esse tipo de ataque mostra algumas vulnerabilidades, por exemplo:
     ai guarda o token no banco, pois o numero do cartao vc nao vai usar de novo
 
 ## A4 - XML External Entities (XEE)
-a entidade externa permite que um parser de xml carregue informacoes de um lugar de fora, inclusive do sistema operacional do servidor, entao imagine que sua aplicação recebe um XML similar a isso:
+a ENTITY com o comando SYSTEM permite que um parser de xml carregue informacoes do sistema operacional do servidor e injete nas variaveis, entao, se sua aplicação receber um XML desse:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE contato....>
-        <!ENTITY nomecliente SYSTEM "Arthur">
-    <cliente>
-        <nome>&nomecliente;</nome>
-    <cliente>
+    <!DOCTYPE client [ <!ENTITY xee SYSTEM "file:///etc/passwd"> ]>
+    <client>
+      <username>arthur.almeida</username>
+      <name>Arthur</name>
+      <lastname>Tatay</lastname>
+      <score>100</score>
+      <foo>&xee;</foo>
+    </client>
 
-essa é uma entidade declarada no proprio xml, entao se inves de "Arthur", alguem enviar no xml nomecliente com valor:
+o parser de XML vai ler a ENTITY, pegar o conteudo desse arquivo ``file:///etc/passwd`` e colocar dentro do campo ``<foo>``
 
-    "file:///etc/passwd"
-
-o parser de XML vai ler a entidade externa, vai pegar o conteudo desse arquivo e colocar dentro do campo <nome>
-ou seja, todas as senhas do servidor estarao gravas no campo nome
+ou seja, todas as senhas do servidor estarao gravas no campo ``<foo>``
 
 ## Como se prevenir: 
   - desativar xml external entity e DTD processing em todos os xmls parsers da aplicação: https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
