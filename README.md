@@ -230,22 +230,22 @@ adulterando dados, modificando informações e salvando no banco de uma forma qu
     pra poder ver, se processo de deserialization que antes devolvia 4 bytes, agora está retornando 1MB, tem algo de estranho!
 
 ## A9 - Using Components with Known Vulnerabilities 
-  - se vc nao sabe as versoes de todos componentes que vc usa, tanto no front quanto no back
+  - não saber as versões de todos componentes que você usa, tanto no front quanto no back, e todos os serviços, DB, fila etc
 
-  - se a tecnologia q vc usa tem vulnerabilidade, sem suporte, ou desatualizado, abandonado (OS/web/application server/database)
+  - usar tecnologias que possuem vulnerabilidades, ou estão sem suporte, ou desatualizado, abandonado (OS/web/application server/database)
 
-  - se vc nao faz scan do software, para ver se há vulnerabilidades, e nao tem relatorios de segurança sobre os componentes que vc usa
+  - não fazer SCAN do software, para ver se há vulnerabilidades, e não tem relatórios de segurança sobre os componentes que você usa
 
-  - se vc nao atualiza os frameworks, linguagens e dependencias que utiliza baseado em riscos
+  - não atualiza os frameworks, linguagens e dependências que utiliza baseado em riscos
 
   - configurações mal feitas de segurança (veja A6)
   
 ## Como se prevenir: 
-  - remover dependencias desnecessarias, documentos, arquivos, componentes desnecessarios 
+  - remover dependências desnecessárias, documentos, arquivos, componentes desnecessários 
 
-  - monitorar continuamente serviços como CVE e NVD para saber sobre vulnerabilidades, se inscreva em alertas de email sobre segurança 
+  - monitorar continuamente serviços como CVE e NVD para saber sobre vulnerabilidades, se inscrever em alertas de email sobre segurança 
 
-  - utilize somente componentes de fontes oficiais em links seguros
+  - utilizar somente componentes de fontes oficiais em links seguros
 
 ## A10 - Insuficient logging and monitoring
   - se sua aplicação nao tem logging de logins, falha de logins, todo tipo de atividade de alto valor
