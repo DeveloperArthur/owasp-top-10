@@ -210,21 +210,24 @@ ele pode injetar código JS no HTML, assim:
 
 ## A8 - Insecure Deserialization
 
-Deserialization é o processo de converser ``JSON``/``XML`` em um objeto do meu sistema
-é basicamente injection por meio de ``JSON``/``XML``, injection de codigo q executa algo, e no momento da deserialization, muda o comportamento da aplicação
-adulterando dados, modificando informacoes no xml pra salvar no banco de uma forma que nao deveria
+Deserialization é o processo de converter ``JSON``/``XML``/``String`` etc em um objeto do meu sistema
+
+esse ataque é bem parecido com A1 e A4, pois por meio de ``JSON``/``XML``/``String``, fazemos um injection de código que executa algo, e no momento da deserialization, muda o comportamento da aplicação
+
+adulterando dados, modificando informações e salvando no banco de uma forma que não deveria
 
 ## Como se prevenir: 
-  - nao aceitar objetos serializados de fontes q vc nao confia
+  - não aceitar objetos serializados de fontes q você não confia
 
   - implementando checagem de integridade dos dados
 
-  - isolar e rodar codigo de deserialization em ambientes com baixo privilegio quando possivel
+  - isolar e rodar código de deserialization em ambientes com baixo privilégio quando possível
 
   - logar todas as falhas e exceptions de deserialization, pois pode ser um ataque
 
-  - restringir e monitorar dados entrando e saindo dos servidores q deserializam
-    pra poder ver, se processo de deserialization que antes devolvia 4 bytes, agr ta retornando 1MB, tem algo de estranho!
+  - restringir e monitorar dados entrando e saindo dos servidores que deserializam
+  
+    pra poder ver, se processo de deserialization que antes devolvia 4 bytes, agora está retornando 1MB, tem algo de estranho!
 
 ## A9 - Using Components with Known Vulnerabilities 
   - se vc nao sabe as versoes de todos componentes que vc usa, tanto no front quanto no back
