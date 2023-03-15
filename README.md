@@ -248,23 +248,23 @@ adulterando dados, modificando informações e salvando no banco de uma forma qu
   - utilizar somente componentes de fontes oficiais em links seguros
 
 ## A10 - Insuficient logging and monitoring
-  - se sua aplicação nao tem logging de logins, falha de logins, todo tipo de atividade de alto valor
+  - se sua aplicação não tem logging de logins, falha de logins, todo tipo de atividade de alto valor
 
-  - logs das aplicações nao sao monitoradas para atividades suspeitas
+  - logs das aplicações não são monitoradas para atividades suspeitas
 
-  - logs estao sendo logados apenas no console do servidor
+  - logs estão sendo logados apenas no console do servidor
 
-  - nao tem alerta nos logs 
+  - não tem alerta nos logs 
 
-  - testes de penetração e serviços de scan como DAST nao disparam alertas
+  - testes de penetração e serviços de SCAN como DAST não disparam alertas
 
 ## Como se prevenir: 
   - logar tentativas falhas de login e todo tipo de atividade de alto valor (veja A2 e A8)
 
   - utilizar ferramenta de monitoramento
 
-  - utilizar algum serviço de log para as infos nao serem logadas apenas no servidor
+  - utilizar algum serviço de logging, para as infos não serem logadas apenas no servidor
 
-  - definir valores de alerta nos logs para vc ficar sabendo
+  - definir valores de alerta nos logs para você ficar sabendo
 
-  - disparar alertas quando testes de penetraçao e scan DAST falharem
+  - disparar alertas quando testes de penetração e SCAN DAST falharem
