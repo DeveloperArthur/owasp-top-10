@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
-<!-- TODO: NAO UTILIZAR ONCLICK NEM DOCUMENT ELEMENT BY ID -->
+<!-- TODO: NAO UTILIZAR DOCUMENT ELEMENT BY ID -->
 <body>
   <h1>Exemplo de Cross Site Scripting</h1>
   <p>
@@ -15,7 +15,7 @@
   <p>
     <label>Seu nome é: <label id="nameDisplay"></label> </label>
   </p>
-  <button id="saveButton" onclick="saveButton()">Salvar</button>
+  <button class="action">Salvar</button>
 
   <br><br>
   <p>se colocar os códigos abaixo no comando de input
@@ -29,7 +29,13 @@
 
   <script>
   var cookies = 'secretCookie=but not HttpOnly!';
-  function saveButton(){
+
+  window.onload = function createEventToOnClick(){
+    var button = document.querySelector('button.action');
+    button.addEventListener('click',save);
+  }
+
+  function save(){
     var name = document.getElementById('nameInput').value;
     document.getElementById('nameDisplay').innerHTML = name;
   }
