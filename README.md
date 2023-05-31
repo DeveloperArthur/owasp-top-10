@@ -144,7 +144,7 @@ ou seja, todas as senhas do servidor estarao gravas no campo ``<foo>``
 ## Como se prevenir: 
   - desativar xml external entity e DTD processing em todos os xmls parsers da aplicação: https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
 
-  - usar SAST para detectar esses ataques
+  - usar SAST para detectar essas vulnerabilidades
 
   - se nao for possivel fazer esses passos acima, use um api security gateway ou WAFs
 
