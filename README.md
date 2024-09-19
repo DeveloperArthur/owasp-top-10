@@ -84,7 +84,7 @@ esse tipo de ataque mostra algumas vulnerabilidades, por exemplo:
 
   - evitar dizer na mensagem "este usuario nao existe", pois isso é uma informação a mais para o hacker... ou "senha incorreta", o certo eh dizer "usuario e senha invalidos", e tomar cuidado tambem com a parte de recuperacao de senha, la tambem pode descobrir se o usuario existe na plataforma
 
-  - diminuir o limite de logins falhos, e se vc ver q alguem tentou logar 3 milhoes de vezes com o mesmo usuario, bloqueia esse IP!
+  - diminuir o limite de logins falhos, e se vc ver q alguem tentou logar 3 milhoes de vezes com o mesmo usuario, bloqueia esse IP! [Semelhante como nos defendemos de um ataque DDoS](https://github.com/DeveloperArthur/arquitetura-escalabilidade-com-php?tab=readme-ov-file#melhorando-disponibilidade-da-aplica%C3%A7%C3%A3o)
 
   - logar na aplicação sempre que alguém tentar se logar como administrador, eh importante saber que alguem tentou se logar como administrador!
 
