@@ -179,7 +179,7 @@ as vulnerabilidades são:
 
   - usuário com senha padrão admin/admin (veja A2)
 
-  - mostrar stack trace de erros para usuário, mostrando nomes de classes, parametros, metodos
+  - [mostrar stack trace de erros para usuário, mostrando nomes de classes, parametros, metodos](https://www.linkedin.com/posts/arthursantosalmeida_expor-a-tecnologia-usada-no-seu-software-activity-7399555601808261120-_o2k)
 
   - directory listing não estar desabilitado no servidor (veja A5)
 
